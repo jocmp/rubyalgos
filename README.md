@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/jocmp/rubyalgos/tree/master.svg?style=svg)](https://circleci.com/gh/jocmp/rubyalgos/tree/master)
+
 # Algos
 
 Some brainteasers I've found along the way
