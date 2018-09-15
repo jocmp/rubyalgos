@@ -1,14 +1,16 @@
 require 'queue_of_stacks'
 
 RSpec.describe QueueOfStacks do
-  describe '#enqueue' do
-    it 'fills the queue' do
+  describe '#enq' do
+    it 'fills the queue, FIFO' do
       queue_of_stacks = QueueOfStacks.new
       3.times { |value| queue_of_stacks.enq(value + 1) }
       expect(queue_of_stacks.size).to(eq(3))
     end
+  end
 
-    it 'dequeues' do
+  describe '#deq' do
+    it 'removes elements, FIFO, from the queue' do
       queue_of_stacks = QueueOfStacks.new
       3.times { |value| queue_of_stacks.enq(value + 1) }
       1.upto(3).each do |dequeue_value|
