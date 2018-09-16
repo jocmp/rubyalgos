@@ -5,6 +5,8 @@
 Some brainteasers I've found along the way
 
 
+- [Base Converter](https://github.com/jocmp/rubyalgos/blob/master/lib/base_converter.rb) ([Tests](https://github.com/jocmp/rubyalgos/blob/master/spec/base_converter_spec.rb))
+  - Converts any Decimal number to another base, given a sorted set of symbols
 - [Stack of Queues](https://github.com/jocmp/rubyalgos/blob/master/lib/queue_of_stacks.rb) ([Tests](https://github.com/jocmp/rubyalgos/blob/master/spec/stack_of_queues_spec.rb))
 - [Queue of Stacks](https://github.com/jocmp/rubyalgos/blob/master/lib/queue_of_stacks.rb) ([Tests](https://github.com/jocmp/rubyalgos/blob/master/spec/queue_of_stacks_spec.rb))
 - [Fibonacci, memoized](https://github.com/jocmp/rubyalgos/blob/master/lib/fibonacci_memo.rb) ([Tests](https://github.com/jocmp/rubyalgos/blob/master/spec/fibonacci_memo_spec.rb))
