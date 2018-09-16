@@ -15,6 +15,6 @@ class BaseConverter
       conversion_value = conversion_value / @radix
     end
 
-    base_conversion_elements.reverse.join("")
+    base_conversion_elements.reverse.join
   end
 end
