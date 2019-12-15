@@ -37,9 +37,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rspec!
-  rspec_junit_formatter!
-  rubocop!
+  rspec
+  rspec_junit_formatter
+  rubocop
 
 BUNDLED WITH
    2.0.2
