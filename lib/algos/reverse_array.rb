@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'algos/vm'
+require_relative 'vm'
 
 module Algos
   class ReverseArray
