@@ -10,11 +10,11 @@ Some brainteasers I've found along the way
 - [Reverse array](lib/algos/reverse_array.rb) ([Tests](spec/lib/algos/reverse_array_spec.rb))
   - Tail-call recursive, uses Ruby's [negative array lookup](https://rubyquicktips.com/post/996814716/use-negative-array-indices) to
   find the last element in the recursive case.
-- [Factorial](lib/algos/factorial.rb).The recursive implementation is slower than just calling `reduce`
+- [Factorial](lib/algos/factorial.rb).The recursive implementation is about the same as just calling `reduce`
   ```
-                            user     system      total        real
-  Recursive impl         0.000011   0.000003   0.000014 (  0.000012)
-  Reduce impl            0.000008   0.000002   0.000010 (  0.000008)
+                             user     system      total        real
+  Recursive impl         0.000010   0.000000   0.000010 (  0.000008)
+  Reduce impl            0.000009   0.000000   0.000009 (  0.000008)
   ```
 
 
