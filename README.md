@@ -1,5 +1,7 @@
 # Algos
 
+![Ruby](https://github.com/jocmp/rubyalgos/workflows/Ruby/badge.svg?branch=master)
+
 Some brainteasers I've found along the way
 
 - [Base Converter](lib/algos/base_converter.rb) ([Tests](spec/lib/algos/base_converter_spec.rb))
