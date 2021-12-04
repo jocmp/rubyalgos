@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'algos/stack_of_queues'
+require "algos/stack_of_queues"
 
 describe Algos::StackOfQueues do
-  describe '#push' do
-    it 'pushes items onto the stack' do
+  describe "#push" do
+    it "pushes items onto the stack" do
       stack_of_queues = Algos::StackOfQueues.new
       3.times { |value| stack_of_queues.push(value + 1) }
       expect(stack_of_queues.size).to(eq(3))
     end
   end
 
-  describe '#pop' do
-    it 'pops items from a stack' do
+  describe "#pop" do
+    it "pops items from a stack" do
       stack_of_queues = Algos::StackOfQueues.new
       3.times { |value| stack_of_queues.push(value + 1) }
       3.downto(1).each do |pop_value|

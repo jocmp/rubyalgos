@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'algos/factorial'
+require "algos/factorial"
 
 RSpec.describe Algos::Factorial do
-  describe '#call_acc' do
+  describe "#call_acc" do
     specify do
       fact = proc { |n| (1..n).inject(1) { |r, i| r * i } }
       (0..50).map { |n| fact[n] }.each_with_index do |expected_result, n|
