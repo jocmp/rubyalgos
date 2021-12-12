@@ -3,9 +3,9 @@
 module Algos
   class BaseConverter
     BASE_TO_SYMBOLS = {
-      base62: {symbols: [*"0".."9", *"a".."z", *"A".."Z"], radix: 62},
-      binary: {symbols: ["0", "1"], radix: 2},
-      hexadecimal: {symbols: [*"0".."9", *"A".."F"], radix: 16}
+      base62: { symbols: [*"0".."9", *"a".."z", *"A".."Z"], radix: 62 },
+      binary: { symbols: %w[0 1], radix: 2 },
+      hexadecimal: { symbols: [*"0".."9", *"A".."F"], radix: 16 }
     }.freeze
 
     BASE_TO_SYMBOLS.each do |base, values|

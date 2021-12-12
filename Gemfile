@@ -3,7 +3,10 @@
 source "https://rubygems.org"
 
 group :test, :development do
-  gem "standard"
+  gem "pry"
+  gem "rubocop"
+  gem "rubocop-lsp"
+  gem "solargraph"
 end
 
 group :test do
