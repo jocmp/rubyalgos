@@ -76,7 +76,8 @@ Randomized with seed 33041
 
 ### Debugging in VSCode
 
-The same commands are available in VSCode using the following config and navigating to the debug view.
+The same commands are available in VSCode in tandem with the [rdbg](https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg) extension
+using the following config and navigating to the debug view.
 
 ```jsonc
 // in launch.json
