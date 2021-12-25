@@ -7,10 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
-
+  lint:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
@@ -20,6 +18,16 @@ jobs:
       - name: Install dependencies
         run: bundle install
       - name: Lint
-        run: bundle exec standardrb
+        run: bundle exec rubocop
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        with:
+          ruby-version: 2.7
+      - name: Install dependencies
+        run: bundle install
       - name: Test
         run: bundle exec rspec
