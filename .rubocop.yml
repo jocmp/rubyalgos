@@ -1,7 +1,6 @@
 AllCops:
   SuggestExtensions: false
   Exclude:
-    - 'vendor/**/*'
     - 'bin/**/*'
 
 Style/Documentation:
