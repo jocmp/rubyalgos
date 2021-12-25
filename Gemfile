@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 group :test, :development do
+  gem "debug"
   gem "pry"
   gem "rubocop"
   gem "rubocop-lsp"

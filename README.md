@@ -19,7 +19,83 @@ Some brainteasers I've found along the way
   Reduce impl            0.000009   0.000000   0.000009 (  0.000008)
   ```
 
-
-
-
 Also helpful: [MIT lecture notes on Memoization](http://courses.csail.mit.edu/6.006/fall09/lecture_notes/lecture18.pdf)
+
+## Debugging
+
+The project includes the Ruby [debug](https://github.com/ruby/debug) gem. This allows for command line debugging by requiring the gem along with
+the `binding.break` command:
+
+```ruby
+# frozen_string_literal: true
+
+require "algos/fibonacci_memo"
+require "debug" # added
+
+RSpec.describe Algos::FibonacciMemo do
+  describe "#fib" do
+    it "computes values from n = 0 to n = 12 for the fibonnaci sequence" do
+      memo = Algos::FibonacciMemo.new
+
+      [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144].each_with_index do |expected_result, n|
+        binding.break # added
+        expect(memo.fib(n)).to(eq(expected_result))
+      end
+    end
+  end
+end
+```
+
+From the shell
+
+```bash
+bin/rspec spec/lib/algos/fibonacci_memo_spec.rb
+```
+
+Output
+```ruby
+# $ bin/rspec spec/lib/algos/fibonacci_memo_spec.rb
+
+Randomized with seed 33041
+[7, 16] in ~/dev/rubyalgos/spec/lib/algos/fibonacci_memo_spec.rb
+     7|   describe "#fib" do
+     8|     it "computes values from n = 0 to n = 12 for the fibonnaci sequence" do
+     9|       memo = Algos::FibonacciMemo.new
+    10|
+    11|       [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144].each_with_index do |expected_result, n|
+=>  12|         binding.break
+    13|         expect(memo.fib(n)).to(eq(expected_result))
+    14|       end
+    15|     end
+    16|   end
+=>#0    block {|expected_result=0, n=0|} in <top (required)> (4 levels) at ~/dev/rubyalgos/spec/lib/algos/fibonacci_memo_spec.rb:12
+  #1    [C] Array#each at ~/dev/rubyalgos/spec/lib/algos/fibonacci_memo_spec.rb:11
+  # and 32 frames (use `bt' command for all frames)
+(rdbg)
+```
+
+### Debugging in VSCode
+
+The same commands are available in VSCode using the following config and navigating to the debug view.
+
+```jsonc
+// in launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+            "type": "rdbg",
+            "name": "Debug current file with rdbg",
+            "request": "launch",
+            "script": "${file}",
+            "args": [],
+            "askParameters": true
+    },
+    {
+            "type": "rdbg",
+            "name": "Attach with rdbg",
+            "request": "attach"
+    }
+  ]
+}
+```
