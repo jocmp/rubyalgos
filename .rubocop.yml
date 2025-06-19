@@ -9,9 +9,11 @@ Style/Documentation:
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
+Metrics/MethodLength:
+  Enabled: false
+
 Layout/LineLength:
-  Exclude:
-    - 'spec/**/*'
+  Enabled: false
 
 Naming/MethodParameterName:
   Enabled: false
